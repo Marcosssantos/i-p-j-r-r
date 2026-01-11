@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igreja Pentecostal Jesus Rei dos Reis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --gold: #1c6c80de;
+            --blue: #123a66; /* azul mais presente */
+            --dark: #1a1a1a;
+            --bg: #f8f8f8;
+            --white: #ffffff;
+        }
+        *{box-sizing: border-box}
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: #222;
+            -webkit-font-smoothing:antialiased;
+        }
+        header {
+            background: linear-gradient(135deg, var(--gold), var(--blue));
+            color: var(--white);
+            text-align: center;
+            padding: 60px 20px;
+            background-size: cover;
+            position: relative;
+        }
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin: 0 0 8px 0;
+            line-height: 1.1;
+        }
+        h2.subtitle{font-weight:400; margin-top:0; opacity:0.95}
+        .hero-buttons{margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+        .btn{background:var(--blue); color:var(--white); border:none; padding:12px 18px; border-radius:6px; cursor:pointer; font-weight:600}
+        .btn.secondary{background:transparent; color:var(--white); border:2px solid rgba(255,255,255,0.2)}
+        section {padding:28px; margin:20px auto; max-width:1100px; background:var(--white); border-radius:10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06)}
+        .section-title{color:var(--blue); margin-top:0}
+        .card {background: #fafafa; border-radius:8px; padding:15px; margin:10px; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.04)}
+        .leadership-grid{display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:14px}
+        .leader-card{display:flex; flex-direction:column; align-items:center; text-align:center; padding:18px}
+        .leader-photo{width:120px; height:120px; border-radius:50%; object-fit:cover; border:3px solid var(--gold); box-shadow:0 6px 16px rgba(0,0,0,0.08); margin-bottom:12px}
+        .leader-card h3{margin:0 0 6px 0; color:var(--blue); font-size:1.05em}
+        .leader-card .role{margin:0; font-size:0.95em; color:#555}
+
+        /* Igrejas / filiais */
+        .church-grid{display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:12px}
+        .church-card{display:flex; flex-direction:column;}
+        .church-photo{width:100%; height:160px; object-fit:cover; border-radius:8px; margin-bottom:12px}
+        .church-info h3{margin:0 0 6px 0; color:var(--blue)}
+        .church-info p{margin:0 0 8px 0; color:#444}
+
+        /* Modal */
+        .img-modal{position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.6); z-index:2000}
+        .img-modal-content{background:var(--white); padding:18px; border-radius:10px; max-width:860px; width:90%; box-shadow:0 12px 40px rgba(0,0,0,0.4); text-align:center}
+        #img-modal-close{position:absolute; right:18px; top:18px; background:transparent; border:none; font-size:22px; cursor:pointer}
+
+        @media (max-width:520px){
+            .church-photo{height:120px}
+            .hero-buttons{gap:8px}
+        }
+
+        /* Accordion */
+        .accordion{margin-top:12px}
+        .accordion-item{border-radius:8px; overflow:hidden; border:1px solid rgba(0,0,0,0.06)}
+        .accordion-button{width:100%; text-align:left; background:linear-gradient(90deg,var(--white), #f7f9fb); padding:14px 18px; border:none; font-weight:600; cursor:pointer}
+        .accordion-content{max-height:0; overflow:hidden; padding:0 18px; transition: max-height .32s ease, padding .32s ease; background:transparent}
+        .accordion-content.open{padding:12px 18px}
+
+        /* Reveal */
+        .reveal{opacity:0; transform:translateY(18px); transition:all .6s ease}
+        .reveal.visible{opacity:1; transform:none}
+
+        /* WhatsApp float */
+        .whatsapp-float{position:fixed; right:20px; bottom:20px; background:#25D366; color:#fff; width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0,0,0,0.18); text-decoration:none; font-size:22px}
+
+        footer{ text-align:center; padding:28px; background:var(--dark); color:var(--white); margin-top:30px }
+
+        @media (max-width:600px){
+            header{padding:40px 12px}
+            h1{font-size:1.6em}
+            section{margin:12px}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <h1>Jesus Cristo é o Rei dos Reis e Senhor dos Senhores</h1>
+            <h2 class="subtitle">Igreja Pentecostal Jesus Rei dos Reis – Desde 1979</h2>
+            <p style="opacity:.95; max-width:800px; margin:12px auto 0;">Bem-vindo à IPJRR — tradição, reverência e acolhimento. Conheça nossa história e as congregações espalhadas pelo Brasil.</p>
+            <div class="hero-buttons">
+                <button class="btn">Conheça Nossa História</button>
+                <button class="btn secondary">Nossas Igrejas</button>
+            </div>
+        </div>
+    </header>
+
+    <section id="quem-somos">
+        <h2>Quem Somos</h2>
+        <p>Fundação em 27 de abril de 1979. Organização religiosa ativa, compromisso com a Palavra de Deus, disciplina cristã e amor.</p>
+    </section>
+
+    <section id="lideranca" class="reveal">
+        <h2 class="section-title">Liderança do Ministério</h2>
+        <p>Equipe de liderança com respeito institucional e destaque visual.</p>
+        <div class="leadership-grid">
+            <div class="leader-card card">
+                <picture>
+                    <source type="image/avif" srcset="imagem/Pastor Sebastião Pedro de Araujo_400.avif 400w, imagem/Pastor Sebastião Pedro de Araujo_800.avif 800w, imagem/Pastor Sebastião Pedro de Araujo_1200.avif 1200w">
+                    <source type="image/webp" srcset="imagem/Pastor Sebastião Pedro de Araujo_400.webp 400w, imagem/Pastor Sebastião Pedro de Araujo_800.webp 800w, imagem/Pastor Sebastião Pedro de Araujo_1200.webp 1200w">
+                    <img src="imagem/Pastor Sebastião Pedro de Araujo_thumb.webp" srcset="imagem/Pastor Sebastião Pedro de Araujo_thumb.webp 120w" data-large="imagem/Pastor Sebastião Pedro de Araujo_1200.avif" alt="Pastor Sebastião Pedro de Araújo" class="leader-photo" loading="lazy">
+                </picture>
+                <h3>Pastor Sebastião Pedro de Araújo</h3>
+                <p class="role">Pastor Presidente e Fundador</p>
+            </div>
+
+            <div class="leader-card card">
+                <picture>
+                    <source type="image/avif" srcset="imagem/Pastor Manoel Vicente da Silva_400.avif 400w, imagem/Pastor Manoel Vicente da Silva_800.avif 800w, imagem/Pastor Manoel Vicente da Silva_1200.avif 1200w">
+                    <source type="image/webp" srcset="imagem/Pastor Manoel Vicente da Silva_400.webp 400w, imagem/Pastor Manoel Vicente da Silva_800.webp 800w, imagem/Pastor Manoel Vicente da Silva_1200.webp 1200w">
+                    <img src="imagem/Pastor Manoel Vicente da Silva_thumb.webp" srcset="imagem/Pastor Manoel Vicente da Silva_thumb.webp 120w" data-large="imagem/Pastor Manoel Vicente da Silva_1200.avif" alt="Pastor Manoel Vicente da Silva" class="leader-photo" loading="lazy">
+                </picture>
+                <h3>Pastor Manoel Vicente da Silva</h3>
+                <p class="role">Vice-Presidente</p>
+            </div>
+
+            <div class="leader-card card">
+                <picture>
+                    <source type="image/avif" srcset="imagem/Marcos Satira dos Santos_400.avif 400w, imagem/Marcos Satira dos Santos_800.avif 800w, imagem/Marcos Satira dos Santos_1200.avif 1200w">
+                    <source type="image/webp" srcset="imagem/Marcos Satira dos Santos_400.webp 400w, imagem/Marcos Satira dos Santos_800.webp 800w, imagem/Marcos Satira dos Santos_1200.webp 1200w">
+                    <img src="imagem/Marcos Satira dos Santos_thumb.webp" srcset="imagem/Marcos Satira dos Santos_thumb.webp 120w" data-large="imagem/Marcos Satira dos Santos_1200.avif" alt="Pastor Marcos Satira dos Santos" class="leader-photo" loading="lazy">
+                </picture>
+                <h3>Pastor Marcos Satira dos Santos</h3>
+                <p class="role">Primeiro Secretário Executivo</p>
+            </div>
+
+            <div class="leader-card card">
+                <picture>
+                    <source type="image/avif" srcset="imagem/Ezequiel de Souza Araujo_400.avif 400w, imagem/Ezequiel de Souza Araujo_800.avif 800w, imagem/Ezequiel de Souza Araujo_1200.avif 1200w">
+                    <source type="image/webp" srcset="imagem/Ezequiel de Souza Araujo_400.webp 400w, imagem/Ezequiel de Souza Araujo_800.webp 800w, imagem/Ezequiel de Souza Araujo_1200.webp 1200w">
+                    <img src="imagem/Ezequiel de Souza Araujo_thumb.webp" srcset="imagem/Ezequiel de Souza Araujo_thumb.webp 120w" data-large="imagem/Ezequiel de Souza Araujo_1200.avif" alt="Pastor Ezequiel de Souza Araujo" class="leader-photo" loading="lazy">
+                </picture>
+                <h3>Pastor Ezequiel de Souza Araujo</h3>
+                <p class="role">Primeiro Gestor Financeiro</p>
+            </div>
+
+            <div class="leader-card card">
+                <picture>
+                    <source type="image/avif" srcset="imagem/José Carlos domingo Santana_400.avif 400w, imagem/José Carlos domingo Santana_800.avif 800w, imagem/José Carlos domingo Santana_1200.avif 1200w">
+                    <source type="image/webp" srcset="imagem/José Carlos domingo Santana_400.webp 400w, imagem/José Carlos domingo Santana_800.webp 800w, imagem/José Carlos domingo Santana_1200.webp 1200w">
+                    <img src="imagem/José Carlos domingo Santana_thumb.webp" srcset="imagem/José Carlos domingo Santana_thumb.webp 120w" data-large="imagem/José Carlos domingo Santana_1200.avif" alt="Pastor José Carlos domingo Santana" class="leader-photo" loading="lazy">
+                </picture>
+                <h3>Pastor José Carlos Domingo Santana</h3>
+                <p class="role">Segundo Gestor Financeiro</p>
+            </div>
+
+            <div class="leader-card card">
+                <picture>
+                    <source type="image/avif" srcset="imagem/Herminia de Souza Araujo_400.avif 400w, imagem/Herminia de Souza Araujo_800.avif 800w, imagem/Herminia de Souza Araujo_1200.avif 1200w">
+                    <source type="image/webp" srcset="imagem/Herminia de Souza Araujo_400.webp 400w, imagem/Herminia de Souza Araujo_800.webp 800w, imagem/Herminia de Souza Araujo_1200.webp 1200w">
+                    <img src="imagem/Herminia de Souza Araujo_thumb.webp" srcset="imagem/Herminia de Souza Araujo_thumb.webp 120w" data-large="imagem/Herminia de Souza Araujo_1200.avif" alt="Hermínia de Souza Araújo" class="leader-photo" loading="lazy">
+                </picture>
+                <h3>Hermínia de Souza Araújo</h3>
+                <p class="role">Primeira-Dama</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="regimento-interno" class="reveal">
+        <h2 class="section-title">Regimento Interno (resumo)</h2>
+        <p>Resumo didático e acessível das principais normas, objetivos e procedimentos do ministério. Clique nas abas para ver cada tópico.</p>
+
+        <div class="accordion" role="tablist">
+            <div class="accordion-item">
+                <button class="accordion-button" aria-expanded="false">📖 Princípios do Ministério</button>
+                <div class="accordion-content" role="region">
+                    <p>Objetivo: orientar e disciplinar segundo os ensinamentos bíblicos, preservando a legitimidade da Palavra. Fundado em 27/04/1979, pelo Pastor Sebastião Pedro de Araújo.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button" aria-expanded="false">👨‍👩‍👧‍👦 Conduta Cristã dos Membros</button>
+                <div class="accordion-content" role="region">
+                    <p>Normas sobre conduta pessoal, exemplos de comportamento esperado, cuidados com vestimenta e uso de álcool/drogas. Há procedimentos disciplinares em caso de infrações, com apoio espiritual e processo de reconciliação quando aplicável.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button" aria-expanded="false">🕊️ Batismo e Doutrina</button>
+                <div class="accordion-content" role="region">
+                    <p>O batismo é realizado por imersão em nome do Pai, Filho e Espírito Santo. Em alguns casos o regimento prevê rebatismo conforme a situação específica do ato anterior.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button" aria-expanded="false">👔 Normas para Obreiros</button>
+                <div class="accordion-content" role="region">
+                    <p>Regras de conduta, frequência, responsabilidade administrativa e critérios para perda ou recuperação de funções (ex.: faltas, adultério, abandono do ministério). Procedimentos de avaliação pelo Conselho de Pastores.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-button" aria-expanded="false">🏛️ Organização e Autoridade Espiritual</button>
+                <div class="accordion-content" role="region">
+                    <p>Estrutura de liderança, competências do Pastor Presidente e do Conselho de Pastores, normas sobre aquisição de bens do ministério e mudança de dirigentes ou campos.</p>
+                </div>
+            </div>
+
+            <div style="margin-top:14px; text-align:right;">
+                <a href="Regimento_interno_simples.pdf" download class="btn">📥 Baixar Regimento (PDF)</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="igrejas" class="reveal">
+        <h2 class="section-title">Nossas Igrejas e Filiais</h2>
+        <p>Conheça as sedes e filiais — clique na foto para ampliá-la e obter a localização no mapa.</p>
+
+        <div class="church-grid">
+            <div class="church-card card">
+                <picture>
+                    <source type="image/avif" srcset="imagem/sede_400.avif 400w, imagem/sede_800.avif 800w, imagem/sede_1200.avif 1200w">
+                    <source type="image/webp" srcset="imagem/sede_400.webp 400w, imagem/sede_800.webp 800w, imagem/sede_1200.webp 1200w">
+                    <img src="imagem/sede_thumb.webp" srcset="imagem/sede_thumb.webp 160w, imagem/sede_400.webp 400w" data-large="imagem/sede_1200.avif" alt="Sede - Jandira" data-caption="Sede – Rua Sargento Getúlio, 35, Mirante de Jandira, Jandira - SP" class="church-photo" loading="lazy">
+                </picture>
+                <div class="church-info">
+                    <h3>Sede — Jandira/SP</h3>
+                    <p>Rua Sargento Getúlio, 35, Mirante de Jandira<br>CEP 06631-060</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Rua+Sargento+Get%C3%BAlio+35+Jandira+SP" target="_blank" class="btn secondary" style="padding:8px 12px;font-size:0.9em">Ver no mapa</a>
+                </div>
+            </div>
+
+            <div class="church-card card">
+                <picture>
+                    <source type="image/avif" srcset="imagem/jandira sp_400.avif 400w, imagem/jandira sp_800.avif 800w, imagem/jandira sp_1200.avif 1200w">
+                    <source type="image/webp" srcset="imagem/jandira sp_400.webp 400w, imagem/jandira sp_800.webp 800w, imagem/jandira sp_1200.webp 1200w">
+                    <img src="imagem/jandira sp_thumb.webp" srcset="imagem/jandira sp_thumb.webp 160w, imagem/jandira sp_400.webp 400w" data-large="imagem/jandira sp_1200.avif" alt="Jandira - SP" data-caption="Jandira – Rua Duque de Caxias, 687, Vila Godinho, Jandira - SP" class="church-photo" loading="lazy">
+                </picture>
+                <div class="church-info">
+                    <h3>Jandira — SP</h3>
+                    <p>Rua Duque de Caxias, 687, Vila Godinho</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Rua+Duque+de+Caxias+687+Jandira+SP" target="_blank" class="btn secondary" style="padding:8px 12px;font-size:0.9em">Ver no mapa</a>
+                </div>
+            </div>
+
+            <div class="church-card card">
+                <picture>
+                    <source type="image/avif" srcset="imagem/barueri sp_400.avif 400w, imagem/barueri sp_800.avif 800w, imagem/barueri sp_1200.avif 1200w">
+                    <source type="image/webp" srcset="imagem/barueri sp_400.webp 400w, imagem/barueri sp_800.webp 800w, imagem/barueri sp_1200.webp 1200w">
+                    <img src="imagem/barueri sp_thumb.webp" srcset="imagem/barueri sp_thumb.webp 160w, imagem/barueri sp_400.webp 400w" data-large="imagem/barueri sp_1200.avif" alt="Barueri - SP" data-caption="Barueri – Alameda Leningrado, 15 - Recanto Phrynea" class="church-photo" loading="lazy">
+                </picture>
+                <div class="church-info">
+                    <h3>Barueri — SP</h3>
+                    <p>Alameda Leningrado, 15 - Recanto Phrynea<br>CEP 06437-000</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Alameda+Leningrado+15+Barueri+SP" target="_blank" class="btn secondary" style="padding:8px 12px;font-size:0.9em">Ver no mapa</a>
+                </div>
+            </div>
+
+            <div class="church-card card">
+                <picture>
+                    <source type="image/avif" srcset="imagem/botucatu_400.avif 400w, imagem/botucatu_800.avif 800w, imagem/botucatu_1200.avif 1200w">
+                    <source type="image/webp" srcset="imagem/botucatu_400.webp 400w, imagem/botucatu_800.webp 800w, imagem/botucatu_1200.webp 1200w">
+                    <img src="imagem/botucatu_thumb.webp" srcset="imagem/botucatu_thumb.webp 160w, imagem/botucatu_400.webp 400w" data-large="imagem/botucatu_1200.avif" alt="Botucatu - SP" data-caption="Botucatu – Rua João Carlos Gonçalves, 15, Bairro dos Cedros" class="church-photo" loading="lazy">
+                </picture>
+                <div class="church-info">
+                    <h3>Botucatu — SP</h3>
+                    <p>Rua João Carlos Gonçalves, 15 - Bairro dos Cedros<br>CEP 18605-814</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Rua+Jo%C3%A3o+Carlos+Gon%C3%A7alves+15+Botucatu+SP" target="_blank" class="btn secondary" style="padding:8px 12px;font-size:0.9em">Ver no mapa</a>
+                </div>
+            </div>
+
+            <div class="church-card card">
+                <picture>
+                    <source type="image/avif" srcset="imagem/itapipoca ce_400.avif 400w, imagem/itapipoca ce_800.avif 800w, imagem/itapipoca ce_1200.avif 1200w">
+                    <source type="image/webp" srcset="imagem/itapipoca ce_400.webp 400w, imagem/itapipoca ce_800.webp 800w, imagem/itapipoca ce_1200.webp 1200w">
+                    <img src="imagem/itapipoca ce_thumb.webp" srcset="imagem/itapipoca ce_thumb.webp 160w, imagem/itapipoca ce_400.webp 400w" data-large="imagem/itapipoca ce_1200.avif" alt="Itapipoca - CE" data-caption="Itapipoca – R. Jaime Henrique, 121 - Nova Aldeota" class="church-photo" loading="lazy">
+                </picture>
+                <div class="church-info">
+                    <h3>Itapipoca — CE</h3>
+                    <p>R. Jaime Henrique, 121 - Nova Aldeota</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=R.+Jaime+Henrique+121+Itapipoca+CE" target="_blank" class="btn secondary" style="padding:8px 12px;font-size:0.9em">Ver no mapa</a>
+                </div>
+            </div>
+
+            <div class="church-card card">
+                <picture>
+                    <source type="image/avif" srcset="imagem/aracau ce_400.avif 400w, imagem/aracau ce_800.avif 800w, imagem/aracau ce_1200.avif 1200w">
+                    <source type="image/webp" srcset="imagem/aracau ce_400.webp 400w, imagem/aracau ce_800.webp 800w, imagem/aracau ce_1200.webp 1200w">
+                    <img src="imagem/aracau ce_thumb.webp" srcset="imagem/aracau ce_thumb.webp 160w, imagem/aracau ce_400.webp 400w" data-large="imagem/aracau ce_1200.avif" alt="Acaraú - CE" data-caption="Acaraú – Rodovia (referência)" class="church-photo" loading="lazy">
+                </picture>
+                <div class="church-info">
+                    <h3>Acaraú — CE</h3>
+                    <p>Rodovia (referência) - CEP 62580-000</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Acara%C3%BA+CE" target="_blank" class="btn secondary" style="padding:8px 12px;font-size:0.9em">Ver no mapa</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de visualização -->
+        <div id="img-modal" class="img-modal" aria-hidden="true" style="display:none">
+            <div class="img-modal-content">
+                <button id="img-modal-close" aria-label="Fechar">×</button>
+                <img id="img-modal-img" src="" alt="" style="max-width:100%; border-radius:8px;">
+                <p id="img-modal-caption" style="margin-top:10px; color:#333"></p>
+                <a id="img-modal-map" href="#" target="_blank" class="btn" style="margin-top:8px">Ver no mapa</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="dados-institucionais">
+        <h2>Dados Institucionais</h2>
+        <p>CNPJ: 49.718.588/0001-02, Razão Social: Igreja Pentecostal Jesus Rei dos Reis, Natureza Jurídica: Organização Religiosa, Situação: Ativa.</p>
+    </section>
+
+    <section id="contato" class="reveal">
+        <h2 class="section-title">Contato</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start">
+            <div>
+                <p><strong>Sede:</strong> Rua Sargento Getúlio, 35 - Mirante de Jandira, Jandira - SP, CEP 06631-060</p>
+                <p><strong>CNPJ:</strong> 49.718.588/0001-02</p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/5515988119121" target="_blank">(15) 98811-9121</a> (botão flutuante disponível)</p>
+            </div>
+            <div>
+                <form id="contact-form">
+                    <div style="display:flex; flex-direction:column; gap:8px">
+                        <input name="name" placeholder="Nome" required style="padding:10px; border-radius:6px; border:1px solid #ddd">
+                        <input name="email" type="email" placeholder="E-mail" required style="padding:10px; border-radius:6px; border:1px solid #ddd">
+                        <textarea name="message" rows="4" placeholder="Mensagem" required style="padding:10px; border-radius:6px; border:1px solid #ddd"></textarea>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Seja bem-vindo à casa do Rei</p>
+    </footer>
+
+    <a class="whatsapp-float" href="https://wa.me/5515988119121" target="_blank" aria-label="WhatsApp">💬</a>
+
+    <script>
+        // Accordion
+        document.querySelectorAll('.accordion-button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.accordion-item');
+                const content = item.querySelector('.accordion-content');
+                const isOpen = content.classList.toggle('open');
+                if (isOpen) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    btn.setAttribute('aria-expanded','true');
+                } else {
+                    content.style.maxHeight = null;
+                    btn.setAttribute('aria-expanded','false');
+                }
+            });
+        });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Contact form (mailto)
+        const form = document.getElementById('contact-form');
+        if (form) {
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                const name = form.name.value.trim();
+                const email = form.email.value.trim();
+                const message = form.message.value.trim();
+                const subject = encodeURIComponent('Contato via site - ' + name);
+                const body = encodeURIComponent(message + '\n\n' + 'Email: ' + email);
+                window.location.href = 'mailto:contato@ipjrr.org?subject=' + subject + '&body=' + body;
+            });
+        }
+
+        // Ajustar alturas de accordion abertos ao carregar (caso queira manter algum aberto)
+        document.querySelectorAll('.accordion-content.open').forEach(el => el.style.maxHeight = el.scrollHeight + 'px');
+
+        // Galeria de filiais - modal
+        const modal = document.getElementById('img-modal');
+        const modalImg = document.getElementById('img-modal-img');
+        const modalCaption = document.getElementById('img-modal-caption');
+        const modalMap = document.getElementById('img-modal-map');
+        const modalClose = document.getElementById('img-modal-close');
+
+        document.querySelectorAll('.church-photo').forEach(img => {
+            img.addEventListener('click', () => {
+                modal.style.display = 'flex';
+                modal.setAttribute('aria-hidden','false');
+                modalImg.src = img.dataset.large || img.dataset.full || img.src;
+                modalImg.alt = img.alt;
+                modalCaption.textContent = img.dataset.caption || img.alt;
+                // tentar extrair endereço para mapa a partir do próximo link
+                const parent = img.closest('.church-card');
+                const mapLink = parent.querySelector('a[target="_blank"]');
+                modalMap.href = mapLink ? mapLink.href : '#';
+            });
+        });
+
+        // Abrir imagens dos líderes também no modal (sem mapa)
+        document.querySelectorAll('.leader-photo').forEach(img => {
+            img.style.cursor = 'pointer';
+            img.setAttribute('role','button');
+            img.tabIndex = 0;
+            const openLeader = () => {
+                modal.style.display = 'flex';
+                modal.setAttribute('aria-hidden','false');
+                modalImg.src = img.dataset.large || img.src;
+                modalImg.alt = img.alt;
+                modalCaption.textContent = img.alt;
+                modalMap.href = '#';
+            };
+            img.addEventListener('click', openLeader);
+            img.addEventListener('keydown', e => { if (e.key === 'Enter') openLeader(); });
+        });
+
+        function closeModal(){
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden','true');
+            modalImg.src = '';
+        }
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    </script>
+</body>
+</html>
